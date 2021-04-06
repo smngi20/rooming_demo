@@ -8,15 +8,26 @@ import Paper from "@material-ui/core/Paper";
 let SATTAN = ''
 let SELECT_SATTAN = ''
 
+// const useStyles = makeStyles((theme) => ({
+//   root: {
+//     display: "flex",
+//     flexWrap: "wrap",
+//     "& > *": {
+//       margin: theme.spacing(1),
+//       width: theme.spacing(16),
+//       height: theme.spacing(16)
+//     }
+//   }
+// }));
 const useStyles = makeStyles((theme) => ({
   root: {
-    display: "flex",
-    flexWrap: "wrap",
-    "& > *": {
-      margin: theme.spacing(1),
-      width: theme.spacing(16),
-      height: theme.spacing(16)
-    }
+    display: "inline-block",
+    overflow: "hidden",
+    // "& > *": {
+    //   margin: theme.spacing(1),
+    //   width: theme.spacing(16),
+    //   height: theme.spacing(16)
+    // }
   }
 }));
 
@@ -147,7 +158,7 @@ const SelectedRoom = (props) =>{
   )
 }
 
-export default function App() {
+export default function Predemo() {
   const imageGalleryClass = useStyles();
   const target = React.useRef(null);
   const mouse = useMouse(target, {
@@ -162,7 +173,7 @@ export default function App() {
 
       <div>
 
-        <Paper elevation={3} >
+        <Paper elevation={3}  theme={imageGalleryClass.root}>
         <img
           src="https://www.researchgate.net/profile/Susumu-Kunifuji/publication/29681554/figure/fig3/AS:669573997162511@1536650289871/Floor-map-of-Group-Home-Tomarigi.png"
           ref={target}
